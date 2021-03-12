@@ -1,0 +1,7 @@
+# directories
+logs
+build
+node_modules
+
+# files
+config/*.json

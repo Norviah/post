@@ -1,0 +1,65 @@
+{
+  "name": "registration",
+  "version": "1.0.0",
+  "description": "[description]",
+  "private": true,
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build:src": "./node_modules/typescript/bin/tsc",
+    "build:docs": "npm run build:src && /bin/rm -rf ./docs; ./node_modules/typedoc/bin/typedoc --plugin typedoc-plugin-markdown && sed -i '' '4d;5d' ./docs/README.md",
+    "start": "node ./build/index.js",
+    "dev": "nodemon --config nodemon.json",
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk build/index.js",
+    "lint": "./node_modules/prettier/bin-prettier.js -c src -w",
+    "publish:patch": "./node_modules/standard-version/bin/cli.js --release-as patch",
+    "publish:minor": "./node_modules/standard-version/bin/cli.js --release-as minor",
+    "publish:major": "./node_modules/standard-version/bin/cli.js --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norviah/registration.git"
+  },
+  "author": "norviah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/norviah/registration/issues"
+  },
+  "homepage": "https://github.com/norviah/registration#readme",
+  "dependencies": {
+    "@norviah/config": "^1.0.1",
+    "@norviah/logger": "^2.1.1",
+    "app-root-path": "^3.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "google-auth-library": "^7.0.2",
+    "googleapis": "^67.1.1",
+    "helmet": "^4.4.1",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/app-root-path": "^1.2.4",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/moment-duration-format": "^2.2.2",
+    "@types/node": "^14.14.31",
+    "@types/readline-sync": "^1.4.3",
+    "@types/ws": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "gaxios": "^4.2.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "standard-version": "^9.1.1",
+    "type-fest": "^0.21.2",
+    "typedoc": "^0.20.28",
+    "typedoc-plugin-markdown": "^3.6.0",
+    "typescript": "^4.2.2"
+  }
+}

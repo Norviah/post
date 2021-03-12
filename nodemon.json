@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "dist/", "coverage/"],
+  "watch": ["build/"],
+  "execMap": {
+    "js": "node build/index.js"
+  },
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js"
+}
