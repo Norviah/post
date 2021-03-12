@@ -7,7 +7,7 @@ import * as paths from '../util/paths';
 // In order to load the config file, we must first create a typing object to
 // be able to check the typings of the config file during run time.
 const typings: { [key in keyof Required<Config>]: Types | Types[] } = {
-  adress: 'string',
+  address: 'string',
   port: 'number',
   id: 'string',
   title: 'string',
